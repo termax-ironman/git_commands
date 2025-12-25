@@ -35,6 +35,49 @@ git status
 
 all 3 files will be red(unstaged) status
 
+if you want to include all 3 files to staged then 
+
+git add .
+
+now you want them back to unstaged rather than commit and push <br>
+
+git restore --staged .
+
+## Kand Ho Gaya? Ed-1 
+
+your local repo currently in sync with central repo<br>
+you changed test1.java file mistakenly<br>
+now you want to undo the unintended changes from git bash to make it again sync with central repo<br>
+how you can do it?
+
+git restore test1.java
+
+### there is another dev(Dev2) in your org who wants central repo code in his/her system?
+
+git clone ".git link"
+
+### Dev2 do changes in test1.java, test2.java and test3.java file then push it to central repo how you will take that code from central repo?
+
+git pull
+
+### How to check each commmits in central repository?
+
+git log
+
+### how to check each commits on any particular file?
+
+git log test1.java
+
+### how to check each commits on all files in single line? (Fancy Command)
+
+git log --oneline
+
+first 7 digits of commit log are only fetched in this case
+
+### how to check each commits on any particular file in single line? (Fancy Command)
+
+git log --oneline test1.java
+
 
 
 
