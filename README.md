@@ -78,6 +78,50 @@ first 7 digits of commit log are only fetched in this case
 
 git log --oneline test1.java
 
+### How to create and Resolve conflicts?
+
+you have Test1.java file inside that you(dev1) wrote <br>
+public class Test { <br>
+public static void main(String[] args) { <br>
+System.out.println("Heelo from Dev1"); <br>
+}<br>
+
+then you did
+git add test1.java
+git commit -m "dev1 test1.java updation"
+git push
+
+now another new team member comes and cloned that repo<br>
+then change the test1.java file content to 
+
+public class Test { <br>
+public static void main(String[] args) { <br>
+System.out.println("Hello from Dev2"); <br>
+}<br>
+
+now he add, commit and push that code to cloud
+then dev1 joined next day and he opened his local 
+test1.java without git pull and added few lines of code in test1.java
+now he did these commands<br>
+git add test1.java<br>
+git commit -m "dev2 change"<br>
+git push
+
+now dev2 will get error as REJECTED.....
+due to mere conflicts..
+now opens the test1.java file and check for log id 
+and then he search that lo id assocaiated developer with 
+
+git log test1.java
+
+then dev2 will call dev1 and discussed and come into conclusion about 
+how much code need to stay and how much need to be discarded
+
+then dev2 will do add,commit and push of that mutually discussed code
+
+That's how mere conflict will get resolved in real time
+
+
 
 
 
