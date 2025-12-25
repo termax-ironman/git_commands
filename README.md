@@ -104,20 +104,20 @@ then dev1 joined next day and he opened his local
 test1.java without git pull and added few lines of code in test1.java
 now he did these commands<br>
 git add test1.java<br>
-git commit -m "dev2 change"<br>
+git commit -m "dev1 change"<br>
 git push
 
-now dev2 will get error as REJECTED.....
-due to mere conflicts..
+now dev1 will get error as REJECTED.....
+due to merge conflicts..
 now opens the test1.java file and check for log id 
 and then he search that lo id assocaiated developer with 
 
 git log test1.java
 
-then dev2 will call dev1 and discussed and come into conclusion about 
+then dev1 will call dev2 and discussed and come into conclusion about 
 how much code need to stay and how much need to be discarded
 
-then dev2 will do add,commit and push of that mutually discussed code
+then dev1 will do add,commit and push of that mutually discussed code
 
 That's how mere conflict will get resolved in real time
 
