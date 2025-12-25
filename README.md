@@ -121,6 +121,50 @@ then dev1 will do add,commit and push of that mutually discussed code
 
 That's how mere conflict will get resolved in real time
 
+### How you can only take code from central remote repo to local repository?
+
+git fetch
+
+### how you can take code from local repo to current workin tree?
+
+git rebase
+
+## IN SHORT GIT PULL = GIT FETCH + GIT REBASE
+
+### git stash HOW TO USE and when to use?
+
+your team lead gave you task to write a feature and test a feature due to bug at today 1:00PM
+and that task(task123/Bug123) need to be completed by tommorow @10:00AM 
+but after lunch break at 3:00pm he assign you another task(task456/Bug456) and 
+told ou to complete it by 5:30PM today on a urgent basis
+
+Now you already started working on task123/Bug123 since 1:00 pm to 3:00pm
+now you want to finsh another task task456/Bug456 
+
+so now you just apply command <br> 
+
+git add task123.java <br>
+git stash <br>
+
+this will move your task123/Bug123 to temporary location 
+you can see the stashed work using
+
+git stash list
+
+now you will continue to work on task456/Bug456 then commit and push that code by 
+5:300pm
+
+after that you need unfinished task123/Bug123 task in your working tree
+
+git stash apply
+
+work on that file then git add commit and push the code
+
+if you want any particular stash that you need to work the 
+first see that stash using git stash list then use
+git stash apply stashid.
+
+![img.png](img.png)
 
 
 
