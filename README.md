@@ -164,7 +164,6 @@ if you want any particular stash that you need to work the
 first see that stash using git stash list then use
 git stash apply stashid.
 
-![img.png](img.png)
 
 
 
