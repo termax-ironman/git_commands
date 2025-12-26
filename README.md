@@ -125,7 +125,7 @@ That's how mere conflict will get resolved in real time
 
 git fetch
 
-### how you can take code from local repo to current workin tree?
+### how you can take code from local repo to current working tree?
 
 git rebase
 
@@ -218,3 +218,91 @@ Then he clicks Compare & pull request → Create pull request → Merge to merge
 
 That’s how all the operations are completed.
 
+### Branching with GIT Commands - 
+
+You are a developer working on Banking App
+Now you need to create a folder structure and take a clone from
+central repo
+then you create a branch out that main branch using
+
+git branch payment
+
+you will switch you head from main to payment branch using 
+
+git checkout payment
+
+now you will work on payment feature and you added p1.java<br>
+
+touch p1.java<br>
+git add .<br>
+git commit "p1.java has been added"<br>
+git push -u origin payment<br>
+
+now you inform your Team Lead about the feature is ready to merge
+
+your TL open his git bash and typed these commands - 
+
+git branch<br>
+main<br>
+payment<br>
+
+git checkout main<br>
+git merge payment<br>
+git push<br>
+
+Now by this time your p1.java will be added to the main branch of the code
+
+### Can you merge one branch into another(without main)?
+
+yes
+
+following up the previous one you opened your laptop and performed below commands - <br>
+
+git branch<br>
+main<br>
+payment<br>
+
+git checkout payment<br>
+git branch Payment-New-Feature-Jan<br>
+git checkout Payment-New-Feature-Jan<br>
+touch pn1.java<br>
+git add .<br>
+git commit -m "payment new feature has been updated"<br>
+git push -u origin Payment-New-Feature-Jan<br>
+git checkout payment<br>
+git merge Payment-New-Feature-Jan<br>
+git push<br>
+
+that's how you can merge one branh code to another.
+
+### What's the difference between Rebase and Merge?
+
+if you created a project with m1.java
+then you create a branch sales out of that main
+then you add s1.java in sales branch 
+meanwhile you realized you forgot to add m2.java in main while crating the base project
+git commands - 
+
+git init<br>
+touch m1.java<br>
+git add .<br>
+git commit -m "m1.java has been added"<br>
+git branch sales<br>
+git checkout sales<br>
+touch s1.java<br>
+
+--now you realized to add m2.java in master/main branch, you do
+
+git checkout master<br>
+touch m2.java<br>
+git add .<br>
+git commit -m "m2.java has been added"<br>
+git checkout sales<br>
+git merge master<br>
+
+the difference is log commit history of after these two commands
+
+if you do git merge master then you will get appropriate order of log commit history
+but while you git rebase master you get wrong and manipulative log commit history
+
+**Rebase rewrites commit history to make it linear, while merge preserves the original branching history.**
