@@ -191,5 +191,30 @@ resets your code to the previous local commit.
 
 **soft = keep staged, mixed = keep unstaged, hard = keep nothing**
 
+### Branching
 
+Master (or main) branch is the production/live branch,
+Our application always goes live from the Master branch.
+You have existing base code in the Master repository.
+
+Imagine you are a developer in the Netbanking team.
+Your Team Lead wants you to add a few changes to the BankAccountBalance Java file.
+
+Then the Team Lead goes to GitHub and clicks Create Branch.
+
+![img_1.png](img_1.png)
+
+He types the branch name based on when this feature needs to be merged from the Netbanking team.
+Then he informs you to take a clone of that branch in your local repository and start working on it.
+
+You, as a developer, will do:
+
+git clone -b "Netbanking-Deliverable-5th January, 2026" ".git link"
+
+Now add the new file and perform git add, git commit, and git push.
+
+On 5th January, the Team Lead sees your deliverable on GitHub.
+Then he clicks Compare & pull request → Create pull request → Merge to merge the code into the Master branch.
+
+That’s how all the operations are completed.
 
