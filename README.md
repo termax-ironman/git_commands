@@ -110,7 +110,7 @@ git push
 now dev1 will get error as REJECTED.....
 due to merge conflicts..
 now opens the test1.java file and check for log id 
-and then he search that lo id assocaiated developer with 
+and then he search that log id assocaiated developer with 
 
 git log test1.java
 
@@ -164,7 +164,32 @@ if you want any particular stash that you need to work the
 first see that stash using git stash list then use
 git stash apply stashid.
 
+### How to move your commited code from local repo to unstaged working tree?
 
+create a file on git bash window
+
+touch file1.java
+
+then do
+git add file1.java
+git commit -m "created file1"
+
+now if you want to move this file to staged area then do
+
+git reset --soft HEAD~1
+
+if you want it to unstaged working tree
+
+git reset --mixed HEAD~1
+
+or if you want to discard everything and want to start creating fresh
+files
+
+git reset --hard HEAD~1
+
+resets your code to the previous local commit.
+
+**soft = keep staged, mixed = keep unstaged, hard = keep nothing**
 
 
 
