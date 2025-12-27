@@ -380,4 +380,4 @@ git switch main
 git checkout is also used to switch between branches but it's more than that 
 you can just jump from one commit to another commit like restore 
 
-git checkout commit-id --filename
+git checkout commit-id --filename = is to do uncommit changes done to a file
