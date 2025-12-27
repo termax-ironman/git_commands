@@ -306,3 +306,45 @@ if you do git merge master then you will get appropriate order of log commit his
 but while you git rebase master you get wrong and manipulative log commit history
 
 **Rebase rewrites commit history to make it linear, while merge preserves the original branching history.**
+
+Another big difference is a bit descriptive in real world frequently used scenario - 
+
+Called a Rebase Activity
+you have january-feature release on spring 1
+sprint 1 contains 
+few branches 
+Main branch --> Test Branch --> QA Branch --> Release Branch --> Client side UAT Testing branch --> prod or live banch or read only branch
+
+this above process is sprint 1 after release you program manager tell you
+there is huge defect are being issued need code fixes on the january release
+then he told you to create january-feature-defect branch and work on that it will go 
+to rebase with last january release branch on 8th february.
+
+now in this case you will use below commands
+
+git branch<br>
+main<br>
+january-feature<br>
+
+git branch -b january-feature-defect<br>
+git checkout january-feature-defect<br>
+touch d1.java<br>
+git add .<br>
+git commit -m "fixed"<br>
+git push -u origin january-feature-defect<br>
+
+you are asked to do rebase activity on 8th february morning -<br>
+
+git checkout january-feature-defect<br>
+git rebase origin/january-feature<br>
+git push -u origin january-feature-defect<br>
+
+now january-feature-defect branch has d1.java file in remote but 
+january-feature has no d1.java file in remote
+
+so to get the file in january-feature beanch you need to complete whole sprint life cycle on 
+january-feature-defect branch then you will able to do merge operation in
+january-feature branch to get the d1.java code in released production branch.
+
+that's how you do rebase.
+
