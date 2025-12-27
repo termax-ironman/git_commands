@@ -348,3 +348,36 @@ january-feature branch to get the d1.java code in released production branch.
 
 that's how you do rebase.
 
+### .gitignore file
+
+you can add extentions, filenames, folder names etc. in the .gitignorefile
+that means when you push your local changes to remote that mentioned files/folders will not
+be avaialble in the remote repository.
+
+create .gitignorefile
+inside that you need to add 
+
+*.class
+/target/
+.project
+
+Files mentioned in .gitignore will not be tracked by Git, 
+so they will never be added or pushed to the remote repository.
+
+
+
+### Git switch vs Git Checkout
+
+Git switch is used to only do the switching between branches
+
+git branch <br>
+main
+Payments
+
+git switch Payments
+git switch main
+
+git checkout is also used to switch between branches but it's more than that 
+you can just jump from one commit to another commit like restore 
+
+git checkout commit-id --filename
