@@ -35,3 +35,6 @@ git classic token id as a password.
 
 please save git token in your notepad for convenience.
 
+NOW TELL YOU DEV ASSOCIATE TO TAKE A CLONE OF THAT REPO BY ENTERING .GIT URL AND HIS
+OWN GIT USERNAME AND GIT GENERATED CLASSIC TOKEN AS A PASSWORD.
+
