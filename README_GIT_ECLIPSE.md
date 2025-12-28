@@ -1,3 +1,5 @@
+## GIT THROUGH ECLIPSE
+
 go to perspective then click git
 
 while workin on eclipse if you want to use git through eclipse itself
@@ -32,3 +34,4 @@ while pushing they might ask for username password please enter your user email 
 git classic token id as a password.
 
 please save git token in your notepad for convenience.
+
