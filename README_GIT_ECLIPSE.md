@@ -1,40 +1,217 @@
-## GIT THROUGH ECLIPSE
+GIT THROUGH ECLIPSE (WITH IMPORT PROJECT FLOW)
+Using Git directly from Eclipse (EGit)
 
-go to perspective then click git
+If you want to use Git through Eclipse itself, you should use the Git Perspective.
 
-while workin on eclipse if you want to use git through eclipse itself
-how you can do it
+Step 1: Open Git Perspective
 
-firstly you can not access, push, pull and do anythin of your it repository 
-throuh your normal git user name and password you need to 
-generate token for that and then need to put the generated token as a password to 
-enter to your it repo or do any kind of remote operation.
+Go to Window → Perspective → Open Perspective → Git
 
-so goto github --> settin --> developer options --> 
-generate classis token --> then how much time you want this token to be 
-active--> please select the days -> then add permissions -->
-then generate token
+Step 2: GitHub Authentication (Mandatory)
 
-then you will make a git repository in the github
+GitHub no longer allows Git operations using username and password.
 
-then you come to eclipse and then you click on git clone repository
+So, you must generate a GitHub Personal Access Token (Classic) and use it as your password.
 
-add .git link
-then save one repo in TL Workspace
-now you as a TL have just set up the local repo in your eclipse
-now you need to push initial project files with directory into github
-so that other developer can take a clone of that and start workin on that
-so you select one already existing project on your project explorer then share to team
-and put it in your eclipse local repo just to add to staging and then commit and push.
+Steps to generate token:
 
-now in git stagging
-click on ++ to add it in staging area
-then add commit messege and commit and push to the remote repo 
-while pushing they might ask for username password please enter your user email and 
-git classic token id as a password.
+Go to GitHub → Settings
 
-please save git token in your notepad for convenience.
+Open Developer settings
 
-NOW TELL YOU DEV ASSOCIATE TO TAKE A CLONE OF THAT REPO BY ENTERING .GIT URL AND HIS
-OWN GIT USERNAME AND GIT GENERATED CLASSIC TOKEN AS A PASSWORD.
+Select Personal access tokens → Tokens (classic)
 
+Click Generate new token (classic)
+
+Choose:
+
+Token expiration time
+
+Required permissions (repo access)
+
+Generate and copy the token
+
+Save the token securely (you won’t be able to view it again)
+
+👉 This token will be used as the Git password in Eclipse.
+
+Step 3: Create Repository on GitHub
+
+Create a new repository on GitHub
+
+Copy the .git repository URL
+
+Step 4: Clone Repository in Eclipse
+
+Switch to Git Perspective
+
+Click Clone a Git repository
+
+Paste the .git URL
+
+Enter:
+
+Username: GitHub username or email
+
+Password: Generated classic token
+
+Choose a local directory (workspace or any folder)
+
+Finish cloning
+
+At this point:
+
+The repository is cloned
+
+Files exist locally
+
+But the project may not yet appear in Project Explorer
+
+Step 5: Import Project into Eclipse
+
+After cloning, Eclipse may not automatically recognize the project.
+
+When to import:
+
+Project is visible in Git Repositories view
+
+But not visible in Project Explorer
+
+Import steps:
+
+Go to File → Import
+
+Select Existing Projects into Workspace
+
+Choose Select root directory
+
+Browse to the cloned repository folder
+
+Select the project
+
+Click Finish
+
+Now the project will appear in Project Explorer.
+
+Step 6: Push Initial Project Files (Team Lead)
+
+To allow other developers to start working:
+
+Select the project in Project Explorer
+
+Right-click → Team → Share Project
+
+Select the cloned Git repository
+
+Open Git Staging view
+
+Click ++ to move files to the staging area
+
+Enter a commit message
+
+Click Commit and Push
+
+During push:
+
+Username: GitHub username/email
+
+Password: GitHub classic token
+
+Step 7: Instructions for Developers
+
+Developers should:
+
+Clone the repository using the .git URL
+
+Import the project into Eclipse (if not auto-detected)
+
+Use:
+
+Their own GitHub username
+
+Their own generated classic token as password
+
+Start working, then commit and push changes
+
+Correct Workflow Summary
+Team Lead
+Create project → Share Project → Commit & Push
+
+Developer
+Clone repo → Import project → Work → Commit & Push
+
+Key Rule to Remember
+
+Cloning brings the code. Importing tells Eclipse how to open it.
+
+### How to pull from central repo?
+
+Right click on the project
+then go to Team → Pull
+
+✔️ This will fetch the latest changes from the remote branch and merge them into your current branch.
+
+### Branching
+
+Yes, you can also create branches and checkout between them in Eclipse itself
+through only clicking (no CLI needed).
+
+✔️ You can create, switch, delete branches using Team → Switch To → New Branch / Other Branch.
+
+### Stashing
+
+You add some code then get that code into the stash area
+then apply stash
+
+then you do your urgent work
+
+when your urgent work is over
+then you apply the stash into your current working tree
+
+📌 Note: Stash just temporarily saves your uncommitted changes; it does not push anything to remote.
+
+### Tag
+
+If you are creating a tag for any commit then you can also do it
+using click
+
+📌 Important correction here ⬇️
+
+Whatever commit you tag, that version of code is NOT read-only.
+
+✔️ A tag is just a label/reference to a specific commit
+✔️ You cannot change the commit, but you can still create new commits and push code normally
+✔️ Tags are mainly used for releases (v1.0, v2.0, etc.)
+
+### CLI COMMAND:
+
+git tag RELEASE1.0 <commitId>
+
+How to get log history of any file?
+
+Click on that file
+then you will get Show Revision History / Show History
+
+✔️ This shows all commits related to that specific file.
+
+How to resolve conflict in Eclipse?
+
+Same as we do in CLI
+3 lines of conflict markers will be there
+
+<<<<<<< HEAD
+(your local code)
+=======
+(remote code)
+>>>>>>> commit-id
+
+
+✔️ First part → your local code
+✔️ Second part → remote code
+
+You will check who has done this commit
+then you will call that developer
+then after mutual discussion, you resolve the conflict and commit
+then push to production.
+
+📌 Eclipse also provides a visual merge editor, which makes this easier.
